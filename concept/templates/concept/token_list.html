@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>Concept: The Game</title>
+	</head>
+	<body>
+		<h1>Concept: The Game</h1>
+		<h2>Tokens</h2>
+		<a href="{% url 'create-token' %}">Add Token</a>
+		{% for token in token_list %}
+		<p>
+			<a href="{% url 'update-token' pk=token.id %}">
+			{{ token.color }}
+			{% if tomen.is_primary %}
+			 (Primary)
+			{% endif %}
+			</a>
+		</p>
+
+		{% endfor %}		
+	</body>
+</html>
